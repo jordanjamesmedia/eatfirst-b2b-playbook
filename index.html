@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Meta Playbook for Eatfirst | Jordan James Media</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23FF6B35' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='system-ui'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Eatfirst Brand Colors */
+            --primary: #FF6B35;
+            --primary-light: rgba(255, 107, 53, 0.1);
+            --primary-glow: rgba(255, 107, 53, 0.3);
+            --secondary: #004E89;
+            --secondary-light: rgba(0, 78, 137, 0.1);
+            --accent: #1A936F;
+            --accent-light: rgba(26, 147, 111, 0.1);
+
+            /* Meta Brand */
+            --meta-blue: #0866FF;
+            --meta-blue-light: rgba(8, 102, 255, 0.1);
+
+            /* Neutrals */
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-section: #f1f5f9;
+            --text-dark: #0f172a;
+            --text-body: #475569;
+            --text-muted: #94a3b8;
+            --border-light: #e2e8f0;
+            --border-subtle: rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+            background: var(--bg-white);
+            color: var(--text-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Background Pattern */
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 107, 53, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 53, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0.75rem 2rem;
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary) 0%, #ff8f5a 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .nav-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .nav-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-body);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: #e55a2b;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            z-index: 1;
+            padding: 8rem 2rem 5rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--meta-blue-light);
+            color: var(--meta-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-body);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Main Content */
+        .main {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .section-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Funnel Visualization */
+        .funnel {
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .funnel-stages {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .funnel-stage {
+            display: flex;
+            align-items: stretch;
+            gap: 1.5rem;
+        }
+
+        .funnel-visual {
+            width: 120px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .funnel-bar {
+            height: 100%;
+            border-radius: 8px;
+            min-height: 80px;
+        }
+
+        .funnel-bar.awareness {
+            width: 100%;
+            background: linear-gradient(135deg, var(--meta-blue) 0%, #4da3ff 100%);
+        }
+
+        .funnel-bar.consideration {
+            width: 75%;
+            background: linear-gradient(135deg, var(--primary) 0%, #ff8f5a 100%);
+        }
+
+        .funnel-bar.conversion {
+            width: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, #2ec4a0 100%);
+        }
+
+        .funnel-content {
+            flex: 1;
+            padding: 0.5rem 0;
+        }
+
+        .funnel-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .funnel-content p {
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .funnel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .funnel-tag {
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            background: var(--bg-section);
+            color: var(--text-body);
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: var(--bg-section);
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.1);
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--bg-white);
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-week {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            font-size: 0.9rem;
+        }
+
+        /* Lists */
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .check-list li::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            background: var(--accent-light);
+            border-radius: 50%;
+            margin-top: 2px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231A936F' stroke-width='3'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+            background-size: 12px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(255, 143, 90, 0.1) 100%);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-white);
+            border: 2px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 8px 40px rgba(255, 107, 53, 0.15);
+            transform: scale(1.02);
+        }
+
+        .pricing-card.featured .pricing-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-period {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features li {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 0.875rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .pricing-cta:hover {
+            background: #e55a2b;
+        }
+
+        .pricing-card:not(.featured) .pricing-cta {
+            background: var(--bg-section);
+            color: var(--text-dark);
+        }
+
+        .pricing-card:not(.featured) .pricing-cta:hover {
+            background: var(--border-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1e293b 100%);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .cta-btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cta-btn.primary:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            z-index: 1;
+            background: var(--bg-section);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, #ff8f5a 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .main {
+                padding: 0 1rem 3rem;
+            }
+
+            .funnel-stage {
+                flex-direction: column;
+            }
+
+            .funnel-visual {
+                width: 100%;
+                height: 16px;
+            }
+
+            .funnel-bar {
+                width: 100% !important;
+                height: 100%;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .cta-section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <div class="nav-logo">JJ</div>
+                <div>
+                    <div class="nav-title">Jordan James Media</div>
+                    <div class="nav-subtitle">B2B Growth Partner</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#strategy">Strategy</a></li>
+                <li><a href="#audiences">Audiences</a></li>
+                <li><a href="#creative">Creative</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#investment">Investment</a></li>
+            </ul>
+            <a href="mailto:jordan@jordanjamesmedia.com" class="nav-cta">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            Meta Business Partner Strategy
+        </div>
+        <h1>B2B Meta Playbook<br>for <span>Eatfirst</span></h1>
+        <p class="hero-subtitle">A comprehensive lead generation strategy to help Eatfirst capture high-value corporate catering clients through Facebook and Instagram advertising.</p>
+
+        <div class="hero-meta">
+            <div class="hero-stat">
+                <div class="hero-stat-value">47%</div>
+                <div class="hero-stat-label">Lower CPL vs Landing Pages</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">$15-35</div>
+                <div class="hero-stat-label">Target Cost Per Lead</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">3.2M+</div>
+                <div class="hero-stat-label">Reachable Decision Makers</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Executive Summary -->
+        <section class="section" id="summary">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                    <h2>Executive Summary</h2>
+                    <p class="section-subtitle">Why Meta for B2B Corporate Catering</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>The Opportunity</h4>
+                <p>Meta offers a significantly more cost-effective lead generation channel for B2B compared to LinkedIn, with CPL ranging from <strong>$5-27</strong> versus LinkedIn's <strong>$50-200</strong>. For corporate catering, we can reach office managers, HR directors, and event planners during their personal browsing time when they're more receptive to "work-solving" content.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">10.63%</div>
+                    <div class="stat-label">B2B Conversion Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$1.88</div>
+                    <div class="stat-label">Avg CPC for B2B</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">32%</div>
+                    <div class="stat-label">CPA Reduction w/ Signals</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">28%</div>
+                    <div class="stat-label">Better Optimization w/ CAPI</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Key Success Factors</h3>
+                <ul class="check-list">
+                    <li>Position catering as a B2B product with clear pricing, tray sizes, and delivery windows</li>
+                    <li>Target "gatekeepers" - office managers, executive assistants, HR coordinators</li>
+                    <li>Use Lead Ads with pre-filled forms for maximum conversion</li>
+                    <li>Implement CRM integration with Meta Conversion API (CAPI) for optimization</li>
+                    <li>Run weekday dayparting when decision-makers are planning meals</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Campaign Strategy -->
+        <section class="section" id="strategy">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                </div>
+                <div>
+                    <h2>Full-Funnel Campaign Strategy</h2>
+                    <p class="section-subtitle">Structured approach from awareness to conversion</p>
+                </div>
+            </div>
+
+            <div class="funnel">
+                <div class="funnel-stages">
+                    <div class="funnel-stage">
+                        <div class="funnel-visual">
+                            <div class="funnel-bar awareness"></div>
+                        </div>
+                        <div class="funnel-content">
+                            <h4>Awareness (TOFU)</h4>
+                            <p>Build brand recognition with office managers and decision-makers. Educational content about corporate catering benefits.</p>
+                            <div class="funnel-tags">
+                                <span class="funnel-tag">Video Ads</span>
+                                <span class="funnel-tag">Thought Leadership</span>
+                                <span class="funnel-tag">8-10% Lookalikes</span>
+                                <span class="funnel-tag">20-30% Budget</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="funnel-stage">
+                        <div class="funnel-visual">
+                            <div class="funnel-bar consideration"></div>
+                        </div>
+                        <div class="funnel-content">
+                            <h4>Consideration (MOFU)</h4>
+                            <p>Showcase menu options, pricing transparency, and ease of ordering. Target engaged users from awareness campaigns.</p>
+                            <div class="funnel-tags">
+                                <span class="funnel-tag">Carousel Ads</span>
+                                <span class="funnel-tag">Menu Showcases</span>
+                                <span class="funnel-tag">2-5% Lookalikes</span>
+                                <span class="funnel-tag">30-40% Budget</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="funnel-stage">
+                        <div class="funnel-visual">
+                            <div class="funnel-bar conversion"></div>
+                        </div>
+                        <div class="funnel-content">
+                            <h4>Conversion (BOFU)</h4>
+                            <p>Drive quote requests with testimonials, limited-time offers, and frictionless lead forms.</p>
+                            <div class="funnel-tags">
+                                <span class="funnel-tag">Lead Forms</span>
+                                <span class="funnel-tag">Testimonials</span>
+                                <span class="funnel-tag">Warm Retargeting</span>
+                                <span class="funnel-tag">30-50% Budget</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Awareness Campaign</h3>
+                    <p><strong>"Why Corporate Catering Matters"</strong></p>
+                    <ul class="check-list">
+                        <li>Office meal planning tips content</li>
+                        <li>Employee satisfaction statistics</li>
+                        <li>Behind-the-scenes food preparation videos</li>
+                        <li>Broad audience targeting with job title signals</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Consideration Campaign</h3>
+                    <p><strong>"Explore Our Catering Options"</strong></p>
+                    <ul class="check-list">
+                        <li>Menu carousel ads by cuisine type</li>
+                        <li>Pricing guides and package options</li>
+                        <li>Event planning checklists (lead magnet)</li>
+                        <li>Target video viewers and page engagers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Conversion Campaign</h3>
+                <p><strong>"Get Your Free Quote in 24 Hours"</strong></p>
+                <ul class="check-list">
+                    <li>Customer testimonials from recognizable companies</li>
+                    <li>First-time customer offer: 15% off first order</li>
+                    <li>Lead forms with 3 fields max: Company size, event type, typical budget</li>
+                    <li>Warm retargeting: Quote page visitors, menu viewers</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Audience Targeting -->
+        <section class="section" id="audiences">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                </div>
+                <div>
+                    <h2>Audience Targeting Strategy</h2>
+                    <p class="section-subtitle">Reaching the right decision-makers</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Audience Segment</th>
+                            <th>Size</th>
+                            <th>Use Case</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Office Managers & Admins</strong></td>
+                            <td>38.7M</td>
+                            <td>Primary gatekeepers for office food decisions</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HR Directors & Managers</strong></td>
+                            <td>12.4M</td>
+                            <td>Employee wellness, team events</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Executive Assistants</strong></td>
+                            <td>8.2M</td>
+                            <td>Executive meals, board meetings</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Event Planners (Business)</strong></td>
+                            <td>65M</td>
+                            <td>Corporate events, conferences</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Facilities Managers</strong></td>
+                            <td>4.8M</td>
+                            <td>Office operations, vendor management</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1% Lookalike (Customers)</strong></td>
+                            <td>Variable</td>
+                            <td>Highest quality prospecting</td>
+                            <td>High</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Custom Audiences (Retargeting)</h3>
+                    <ul class="check-list">
+                        <li>Website visitors (pricing/menu pages) - 30 days</li>
+                        <li>Quote form started but not completed - 7 days</li>
+                        <li>Video viewers (50%+) - 30 days</li>
+                        <li>Page engagers - 60 days</li>
+                        <li>Customer list from CRM</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Lookalike Strategy</h3>
+                    <ul class="check-list">
+                        <li>1% lookalike of best customers (highest LTV)</li>
+                        <li>1% lookalike of lead form completers</li>
+                        <li>2-5% lookalikes for scale testing</li>
+                        <li>Value-based lookalikes using order value</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Geographic Targeting Recommendation</h4>
+                <p>Focus on downtown business districts, commercial office parks, and corporate centers within your delivery radius. Target specific zip codes with high commercial density for maximum relevance and efficient ad spend.</p>
+            </div>
+        </section>
+
+        <!-- Creative Strategy -->
+        <section class="section" id="creative">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                    <h2>Creative & Ad Format Strategy</h2>
+                    <p class="section-subtitle">What works for B2B catering ads</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Format</th>
+                            <th>Median CPM</th>
+                            <th>CTR</th>
+                            <th>Best Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Video (15s)</strong></td>
+                            <td>Higher</td>
+                            <td>0.98%</td>
+                            <td>Awareness, storytelling, food prep</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Carousel</strong></td>
+                            <td>$5.13</td>
+                            <td>0.90%</td>
+                            <td>Menu showcase, packages</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Static Image</strong></td>
+                            <td>$7.19</td>
+                            <td>0.82%</td>
+                            <td>Quick CTAs, offers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lead Forms</strong></td>
+                            <td>Variable</td>
+                            <td>7.72% CVR</td>
+                            <td>Quote requests, bottom funnel</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Video Best Practices</h3>
+                    <ul class="check-list">
+                        <li>Keep under 15 seconds</li>
+                        <li>Show food prep & packaging</li>
+                        <li>Add captions (85% watch muted)</li>
+                        <li>5 short videos > 1 long video</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Carousel Best Practices</h3>
+                    <ul class="check-list">
+                        <li>30-50% lower cost per conversion</li>
+                        <li>Tell a story across cards</li>
+                        <li>Showcase different cuisines</li>
+                        <li>Consistent aspect ratios</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Copy Guidelines</h3>
+                    <ul class="check-list">
+                        <li>Lead with benefits, not features</li>
+                        <li>Include social proof</li>
+                        <li>Clear CTAs: "Get Quote"</li>
+                        <li>Address pain points directly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Recommended Lead Magnets</h4>
+                <div class="grid-3" style="margin-top: 1rem;">
+                    <div>
+                        <strong>Awareness Stage</strong>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">"Complete Guide to Corporate Catering"<br>"2026 Office Food Trends Report"</p>
+                    </div>
+                    <div>
+                        <strong>Consideration Stage</strong>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">"Catering Planning Template"<br>"Budget Calculator Tool"</p>
+                    </div>
+                    <div>
+                        <strong>Decision Stage</strong>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">"Get Custom Quote in 24hrs"<br>"First Order 15% Off"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Roadmap -->
+        <section class="section" id="roadmap">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                </div>
+                <div>
+                    <h2>Implementation Roadmap</h2>
+                    <p class="section-subtitle">12-week launch and optimization plan</p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 1-2 | Foundation</div>
+                    <div class="timeline-title">Setup & Configuration</div>
+                    <div class="timeline-content">
+                        <ul class="check-list">
+                            <li>Install Meta Pixel on all website pages</li>
+                            <li>Configure Conversion API (CAPI) with CRM</li>
+                            <li>Build custom audiences from existing customer data</li>
+                            <li>Create 1% lookalikes from best customers</li>
+                            <li>Develop 3-5 creative variations per funnel stage</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 3-6 | Testing</div>
+                    <div class="timeline-title">Campaign Launch & Testing</div>
+                    <div class="timeline-content">
+                        <ul class="check-list">
+                            <li>Launch Awareness campaign (video content) - $20-30/day</li>
+                            <li>Launch Consideration campaign (carousels, lead magnets) - $30-40/day</li>
+                            <li>Launch Conversion campaign (lead forms, quotes) - $40-50/day</li>
+                            <li>Use ABO structure for audience/creative testing</li>
+                            <li>Monitor and adjust weekly based on data</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 7-10 | Optimization</div>
+                    <div class="timeline-title">Scale Winners, Cut Losers</div>
+                    <div class="timeline-content">
+                        <ul class="check-list">
+                            <li>Identify winning audiences and creatives</li>
+                            <li>Pause underperforming ad sets</li>
+                            <li>Increase budget on winners by 20-30%</li>
+                            <li>Transition to CBO structure for scaling</li>
+                            <li>Implement advanced retargeting campaigns</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Weeks 11+ | Scaling</div>
+                    <div class="timeline-title">Growth & Expansion</div>
+                    <div class="timeline-content">
+                        <ul class="check-list">
+                            <li>Scale budgets 20-30% weekly on successful campaigns</li>
+                            <li>Expand lookalike audiences (2-5%)</li>
+                            <li>Test new creative angles and messaging</li>
+                            <li>Add seasonal campaigns (holidays, events)</li>
+                            <li>Continuous A/B testing for optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget & Investment -->
+        <section class="section" id="investment">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                    <h2>Investment Options</h2>
+                    <p class="section-subtitle">Flexible packages to match your goals</p>
+                </div>
+            </div>
+
+            <div class="pricing-tiers">
+                <div class="pricing-card">
+                    <div class="pricing-name">Starter</div>
+                    <div class="pricing-price">$3,000</div>
+                    <div class="pricing-period">per month + ad spend</div>
+                    <ul class="pricing-features check-list">
+                        <li>Full-funnel campaign setup</li>
+                        <li>$100-150/day ad spend recommended</li>
+                        <li>3 audiences tested</li>
+                        <li>5 creative variations</li>
+                        <li>Weekly reporting</li>
+                        <li>Monthly strategy call</li>
+                    </ul>
+                    <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Starter%20Package" class="pricing-cta">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Recommended</span>
+                    <div class="pricing-name">Growth</div>
+                    <div class="pricing-price">$5,000</div>
+                    <div class="pricing-period">per month + ad spend</div>
+                    <ul class="pricing-features check-list">
+                        <li>Everything in Starter, plus:</li>
+                        <li>$150-250/day ad spend recommended</li>
+                        <li>6 audiences tested</li>
+                        <li>10 creative variations</li>
+                        <li>Advanced retargeting</li>
+                        <li>CRM integration setup</li>
+                        <li>Bi-weekly strategy calls</li>
+                    </ul>
+                    <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Growth%20Package" class="pricing-cta">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Scale</div>
+                    <div class="pricing-price">$8,000</div>
+                    <div class="pricing-period">per month + ad spend</div>
+                    <ul class="pricing-features check-list">
+                        <li>Everything in Growth, plus:</li>
+                        <li>$300+/day ad spend recommended</li>
+                        <li>Unlimited audience testing</li>
+                        <li>15+ creative variations</li>
+                        <li>Seasonal campaign planning</li>
+                        <li>Dedicated account manager</li>
+                        <li>Weekly strategy calls</li>
+                    </ul>
+                    <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Scale%20Package" class="pricing-cta">Get Started</a>
+                </div>
+            </div>
+
+            <div class="table-wrapper" style="margin-top: 2rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Expected Performance</th>
+                            <th>Starter</th>
+                            <th>Growth</th>
+                            <th>Scale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Monthly Ad Spend</strong></td>
+                            <td>$3,000-4,500</td>
+                            <td>$4,500-7,500</td>
+                            <td>$9,000+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Expected Leads/Month</strong></td>
+                            <td>85-150</td>
+                            <td>150-300</td>
+                            <td>300-600+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Target CPL</strong></td>
+                            <td>$25-35</td>
+                            <td>$20-30</td>
+                            <td>$15-25</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Qualified Lead Rate</strong></td>
+                            <td>15-20%</td>
+                            <td>20-25%</td>
+                            <td>25-30%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Fill Your Corporate Catering Pipeline?</h2>
+            <p>Let's discuss how this B2B Meta playbook can help Eatfirst capture more high-value corporate clients.</p>
+            <div class="cta-buttons">
+                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20B2B%20Meta%20Playbook%20-%20Let's%20Talk" class="cta-btn primary">Schedule a Call</a>
+                <a href="tel:+61400000000" class="cta-btn secondary">Call Now</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <div class="footer-logo">JJ</div>
+            <strong style="color: var(--text-dark);">Jordan James Media</strong>
+        </div>
+        <p>B2B Growth Partner | <a href="https://jordanjamesmedia.com">jordanjamesmedia.com</a></p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem;">Prepared for Eatfirst | February 2026</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add active state to nav links on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = 'var(--primary)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
