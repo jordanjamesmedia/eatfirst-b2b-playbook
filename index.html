@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2B Meta Strategy | Eatfirst x Jordan James Media</title>
-    <link rel="icon" href="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png">
+    <title>B2B Meta Playbook | Eatfirst</title>
+    <link rel="icon" href="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5e5d89930ab6c87b1c1d2f07_favicon-96x96.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --ef-purple: #7F7FA0;
-            --ef-light: #EDEDF2;
-            --ef-dark: #2D2D3A;
+            --ef-light: #F8F8FA;
+            --ef-dark: #1E1E2D;
             --ef-coral: #FF6B6B;
             --ef-teal: #4ECDC4;
+            --ef-gold: #FFD93D;
             --white: #FFFFFF;
-            --gray-50: #FAFAFA;
-            --gray-100: #F5F5F5;
-            --gray-200: #EEEEEE;
-            --gray-400: #BDBDBD;
-            --gray-600: #757575;
-            --gray-800: #424242;
+            --gray-100: #F5F5F7;
+            --gray-200: #E8E8EC;
+            --gray-400: #9E9EA7;
+            --gray-600: #6B6B76;
+            --gray-800: #3D3D47;
             --meta-blue: #1877F2;
+            --ig-pink: #E1306C;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background: var(--white);
             color: var(--gray-800);
             line-height: 1.6;
@@ -38,58 +39,68 @@
 
         /* Header */
         .header {
-            position: sticky;
-            top: 0;
-            background: var(--white);
+            padding: 20px 48px;
+            display: flex;
+            align-items: center;
             border-bottom: 1px solid var(--gray-200);
-            padding: 16px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
         }
 
-        .header-logos {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .header-logo { height: 32px; }
-        .header-divider { color: var(--gray-400); font-weight: 300; }
+        .header img { height: 36px; }
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--ef-light) 0%, var(--white) 100%);
-            padding: 80px 48px;
+            background: linear-gradient(135deg, var(--ef-dark) 0%, #2a2a3d 100%);
+            color: var(--white);
+            padding: 100px 48px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(78,205,196,0.1) 0%, transparent 50%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-content { position: relative; z-index: 1; }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
             border-radius: 100px;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
-            color: var(--meta-blue);
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--ef-dark);
-            margin-bottom: 16px;
-            line-height: 1.2;
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
         }
+
+        .hero h1 span { color: var(--ef-teal); }
 
         .hero p {
             font-size: 20px;
-            color: var(--gray-600);
+            opacity: 0.8;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -97,105 +108,217 @@
         /* Section */
         .section {
             padding: 80px 48px;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        .section-alt { background: var(--gray-50); }
+        .section-dark {
+            background: var(--ef-dark);
+            color: var(--white);
+            max-width: none;
+        }
+
+        .section-alt { background: var(--gray-100); max-width: none; }
+        .section-alt .section-inner { max-width: 1300px; margin: 0 auto; }
 
         .section-header {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 60px;
         }
 
         .section-label {
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--ef-purple);
-            margin-bottom: 12px;
+            letter-spacing: 2px;
+            color: var(--ef-teal);
+            margin-bottom: 16px;
         }
 
+        .section-dark .section-label { color: var(--ef-teal); }
+
         .section-title {
-            font-size: 32px;
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--ef-dark);
+            line-height: 1.2;
+        }
+
+        .section-dark .section-title { color: var(--white); }
+
+        /* Opportunity Stats */
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .opportunity-visual {
+            background: linear-gradient(135deg, var(--meta-blue) 0%, #4267B2 100%);
+            border-radius: 24px;
+            padding: 48px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity-visual::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -20%;
+            width: 60%;
+            height: 60%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .opp-stat { margin-bottom: 32px; position: relative; z-index: 1; }
+        .opp-stat:last-child { margin-bottom: 0; }
+        .opp-value { font-size: 48px; font-weight: 800; }
+        .opp-label { font-size: 16px; opacity: 0.9; }
+
+        .opportunity-content h3 {
+            font-size: 28px;
             font-weight: 700;
+            margin-bottom: 20px;
             color: var(--ef-dark);
         }
 
-        /* Stats */
-        .stats-grid {
+        .opportunity-content p {
+            font-size: 17px;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .comparison-bar {
+            background: var(--gray-100);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .comparison-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .comparison-track {
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .comparison-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .comparison-fill.meta { width: 25%; background: var(--ef-teal); }
+        .comparison-fill.linkedin { width: 100%; background: var(--ef-coral); }
+
+        /* Audience Grid */
+        .audience-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
-            margin-bottom: 48px;
         }
 
-        .stat-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 24px;
+        .audience-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px 24px;
             text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .stat-value {
-            font-size: 36px;
+        .audience-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--ef-teal);
+        }
+
+        .audience-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--ef-teal) 0%, #3DBDB5 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .audience-card h4 {
+            font-size: 18px;
             font-weight: 700;
-            color: var(--ef-teal);
+            margin-bottom: 8px;
         }
 
-        .stat-label {
-            font-size: 13px;
-            color: var(--gray-600);
-            margin-top: 4px;
+        .audience-card p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.5;
         }
 
-        /* Ad Mockups */
-        .ads-grid {
+        /* Ad Showcase */
+        .ad-showcase {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
         }
 
-        .ad-wrapper { text-align: center; }
+        .ad-column { text-align: center; }
 
-        .ad-stage {
-            font-size: 11px;
-            font-weight: 600;
+        .ad-phase {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--ef-purple);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
+
+        .ad-phase.awareness { background: rgba(24,119,242,0.15); color: var(--meta-blue); }
+        .ad-phase.consideration { background: rgba(255,107,107,0.15); color: var(--ef-coral); }
+        .ad-phase.conversion { background: rgba(78,205,196,0.15); color: var(--ef-teal); }
 
         .ad-mockup {
             background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--gray-200);
         }
 
-        .ad-header {
-            padding: 12px;
+        .ad-top {
+            padding: 14px 16px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             border-bottom: 1px solid var(--gray-200);
         }
 
         .ad-avatar {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: var(--ef-dark);
-            padding: 6px;
+            padding: 8px;
         }
 
-        .ad-meta { text-align: left; }
-        .ad-name { font-size: 13px; font-weight: 600; }
-        .ad-sponsored { font-size: 11px; color: var(--gray-600); }
+        .ad-info { text-align: left; }
+        .ad-name { font-size: 14px; font-weight: 600; color: var(--gray-800); }
+        .ad-sponsor { font-size: 12px; color: var(--gray-400); }
 
         .ad-image {
             width: 100%;
@@ -203,618 +326,815 @@
             object-fit: cover;
         }
 
-        .ad-body { padding: 12px; text-align: left; }
-        .ad-text { font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+        .ad-copy {
+            padding: 16px;
+            text-align: left;
+            font-size: 14px;
+            color: var(--gray-800);
+            line-height: 1.5;
+        }
 
-        .ad-cta-bar {
+        .ad-cta {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 14px 16px;
             background: var(--gray-100);
-            padding: 10px 12px;
-            border-radius: 6px;
+            border-top: 1px solid var(--gray-200);
         }
 
-        .ad-cta-info { text-align: left; }
-        .ad-cta-url { font-size: 11px; color: var(--gray-600); }
-        .ad-cta-headline { font-size: 13px; font-weight: 600; }
+        .ad-cta-left { text-align: left; }
+        .ad-cta-url { font-size: 11px; color: var(--gray-400); text-transform: uppercase; }
+        .ad-cta-headline { font-size: 14px; font-weight: 600; color: var(--gray-800); }
 
         .ad-cta-btn {
             background: var(--meta-blue);
             color: var(--white);
             border: none;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 6px;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
-            cursor: pointer;
+        }
+
+        .ad-desc {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--gray-100);
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .ad-desc h5 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--ef-dark);
+        }
+
+        .ad-desc p {
+            font-size: 13px;
+            color: var(--gray-600);
+            line-height: 1.6;
         }
 
         /* Funnel */
-        .funnel-section {
+        .funnel-wrapper {
             display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 48px;
+            grid-template-columns: 320px 1fr;
+            gap: 60px;
             align-items: start;
         }
 
-        .funnel-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        .funnel-graphic {
+            position: sticky;
+            top: 100px;
         }
 
-        .funnel-bar {
-            padding: 20px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--white);
+        .funnel-shape {
+            position: relative;
+            padding-top: 20px;
+        }
+
+        .funnel-level {
+            margin-bottom: 12px;
+            padding: 24px;
+            border-radius: 12px;
             text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--white);
+            position: relative;
         }
 
-        .funnel-bar.top { background: var(--meta-blue); }
-        .funnel-bar.mid { background: var(--ef-coral); width: 85%; margin: 0 auto; }
-        .funnel-bar.bot { background: var(--ef-teal); width: 70%; margin: 0 auto; }
+        .funnel-level.l1 {
+            background: linear-gradient(135deg, var(--meta-blue) 0%, #4267B2 100%);
+        }
 
-        .funnel-stages { display: flex; flex-direction: column; gap: 24px; }
+        .funnel-level.l2 {
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(135deg, var(--ef-coral) 0%, #FF8E72 100%);
+        }
+
+        .funnel-level.l3 {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(135deg, var(--ef-teal) 0%, #3DBDB5 100%);
+        }
+
+        .funnel-budget {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        .funnel-details { display: flex; flex-direction: column; gap: 32px; }
 
         .funnel-card {
             background: var(--white);
             border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 24px;
-            display: flex;
-            gap: 16px;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
         }
 
-        .funnel-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+        .funnel-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .funnel-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            color: var(--white);
         }
 
-        .funnel-icon.blue { background: rgba(24,119,242,0.1); color: var(--meta-blue); }
-        .funnel-icon.coral { background: rgba(255,107,107,0.1); color: var(--ef-coral); }
-        .funnel-icon.teal { background: rgba(78,205,196,0.1); color: var(--ef-teal); }
+        .funnel-card-icon.blue { background: var(--meta-blue); }
+        .funnel-card-icon.coral { background: var(--ef-coral); }
+        .funnel-card-icon.teal { background: var(--ef-teal); }
 
-        .funnel-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-        .funnel-content p { font-size: 14px; color: var(--gray-600); margin-bottom: 12px; }
+        .funnel-card-title h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
 
-        .funnel-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+        .funnel-card-title span {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
 
-        .funnel-tag {
-            font-size: 11px;
-            font-weight: 500;
-            padding: 4px 10px;
+        .funnel-card p {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .funnel-tactics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tactic-tag {
+            padding: 8px 16px;
             background: var(--gray-100);
             border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
             color: var(--gray-600);
         }
 
-        /* Carousel Preview */
-        .carousel-section {
+        /* Lead Form Mockup */
+        .leadform-section {
             display: grid;
-            grid-template-columns: 420px 1fr;
-            gap: 48px;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
             align-items: center;
         }
 
-        .carousel-mockup {
+        .leadform-mockup {
             background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.1);
+        }
+
+        .leadform-header {
+            background: linear-gradient(135deg, var(--meta-blue) 0%, #4267B2 100%);
+            color: var(--white);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .leadform-header img {
+            height: 32px;
+            margin-bottom: 12px;
+            filter: brightness(10);
+        }
+
+        .leadform-header h4 { font-size: 18px; font-weight: 700; }
+        .leadform-header p { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+
+        .leadform-body { padding: 24px; }
+
+        .leadform-field {
+            margin-bottom: 16px;
+        }
+
+        .leadform-field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--gray-600);
+        }
+
+        .leadform-field input, .leadform-field select {
+            width: 100%;
+            padding: 12px 16px;
             border: 1px solid var(--gray-200);
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-        }
-
-        .carousel-text { padding: 12px; font-size: 13px; }
-
-        .carousel-scroll {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 0;
-        }
-
-        .carousel-scroll::-webkit-scrollbar { display: none; }
-
-        .carousel-card {
-            flex: 0 0 140px;
-            scroll-snap-align: start;
-            border-right: 1px solid var(--gray-200);
-        }
-
-        .carousel-card img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-        }
-
-        .carousel-card-label {
-            padding: 10px;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 14px;
             background: var(--gray-100);
         }
 
-        .carousel-benefits h3 { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+        .leadform-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--meta-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
 
-        .carousel-benefits ul {
+        .leadform-content h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--ef-dark);
+        }
+
+        .leadform-content p {
+            font-size: 17px;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .leadform-benefits {
             list-style: none;
         }
 
-        .carousel-benefits li {
-            padding: 8px 0;
-            font-size: 15px;
+        .leadform-benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .leadform-benefits li:last-child { border-bottom: none; }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(78,205,196,0.15);
+            border-radius: 10px;
             display: flex;
             align-items: center;
-            gap: 12px;
-        }
-
-        .carousel-benefits li::before {
-            content: '✓';
+            justify-content: center;
             color: var(--ef-teal);
-            font-weight: 700;
+            flex-shrink: 0;
         }
 
-        /* Pricing */
-        .pricing-grid {
+        .benefit-text h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .benefit-text p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        /* Retargeting */
+        .retargeting-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .retarget-step {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .retarget-step .icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--ef-teal) 0%, #3DBDB5 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+        }
+
+        .retarget-step h5 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .retarget-step p {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        .retarget-arrow {
+            font-size: 24px;
+            color: var(--ef-teal);
+        }
+
+        /* Results */
+        .results-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
         }
 
-        .pricing-card {
+        .result-card {
             background: var(--white);
             border: 1px solid var(--gray-200);
             border-radius: 16px;
             padding: 32px;
-            position: relative;
+            text-align: center;
         }
 
-        .pricing-card.featured {
-            border-color: var(--ef-teal);
-            box-shadow: 0 8px 32px rgba(78,205,196,0.15);
-        }
-
-        .pricing-card.featured::before {
-            content: 'RECOMMENDED';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--ef-teal);
-            color: var(--white);
-            font-size: 10px;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 100px;
-        }
-
-        .pricing-name { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-        .pricing-price { font-size: 40px; font-weight: 700; color: var(--ef-dark); }
-        .pricing-period { font-size: 13px; color: var(--gray-600); margin-bottom: 24px; }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 24px;
-        }
-
-        .pricing-features li {
-            padding: 10px 0;
-            font-size: 14px;
-            border-bottom: 1px solid var(--gray-200);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .pricing-features li::before {
-            content: '✓';
+        .result-value {
+            font-size: 48px;
+            font-weight: 800;
             color: var(--ef-teal);
-            font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        .pricing-cta {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            border-radius: 8px;
+        .result-label {
             font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-
-        .pricing-cta:hover { transform: translateY(-2px); }
-
-        .pricing-card.featured .pricing-cta {
-            background: var(--ef-teal);
-            color: var(--white);
-        }
-
-        .pricing-card:not(.featured) .pricing-cta {
-            background: var(--gray-100);
-            color: var(--ef-dark);
-        }
-
-        /* CTA */
-        .cta-section {
-            background: var(--ef-dark);
-            color: var(--white);
-            padding: 80px 48px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            opacity: 0.8;
-            margin-bottom: 32px;
-        }
-
-        .cta-buttons { display: flex; gap: 16px; justify-content: center; }
-
-        .cta-btn {
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-
-        .cta-btn:hover { transform: translateY(-2px); }
-        .cta-btn.primary { background: var(--ef-coral); color: var(--white); }
-        .cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); }
-
-        .cta-logos {
-            margin-top: 48px;
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            align-items: center;
-            opacity: 0.6;
+            color: var(--gray-600);
         }
 
         /* Footer */
         .footer {
             background: var(--gray-100);
-            padding: 24px;
+            padding: 32px;
             text-align: center;
         }
 
         .made-by {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
             color: var(--gray-600);
-            font-size: 13px;
+            font-size: 14px;
+            transition: color 0.2s;
         }
 
-        .made-by img {
-            height: 20px;
-        }
-
-        .made-by:hover {
-            color: var(--ef-dark);
-        }
+        .made-by:hover { color: var(--ef-dark); }
+        .made-by img { height: 24px; }
 
         /* Responsive */
-        @media (max-width: 900px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .ads-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
-            .funnel-section { grid-template-columns: 1fr; }
-            .carousel-section { grid-template-columns: 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 36px; }
+        @media (max-width: 1024px) {
+            .opportunity-grid,
+            .funnel-wrapper,
+            .leadform-section { grid-template-columns: 1fr; }
+            .audience-grid { grid-template-columns: repeat(2, 1fr); }
+            .ad-showcase { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 40px; }
             .section { padding: 60px 24px; }
             .header { padding: 16px 24px; }
+            .funnel-graphic { position: static; }
+        }
+
+        @media (max-width: 600px) {
+            .audience-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr; }
+            .retargeting-flow { flex-direction: column; }
+            .retarget-arrow { transform: rotate(90deg); }
         }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <div class="header-logos">
-            <a href="https://eatfirst.com" target="_blank">
-                <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="header-logo">
-            </a>
-        </div>
+        <a href="https://eatfirst.com" target="_blank">
+            <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst">
+        </a>
     </header>
 
     <section class="hero">
-        <div class="hero-badge">
-            <svg width="16" height="16" fill="#1877F2" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            Meta Advertising Strategy
-        </div>
-        <h1>B2B Meta Playbook</h1>
-        <p>A full-funnel Facebook & Instagram strategy to capture high-value corporate catering clients.</p>
-    </section>
-
-    <section class="section section-alt">
-        <div class="section-header">
-            <div class="section-label">The Opportunity</div>
-            <div class="section-title">Why Meta for B2B Catering?</div>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-value">$15-35</div>
-                <div class="stat-label">Target Cost Per Lead</div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                Facebook & Instagram Strategy
             </div>
-            <div class="stat-card">
-                <div class="stat-value">47%</div>
-                <div class="stat-label">Lower CPL vs LinkedIn</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">38M+</div>
-                <div class="stat-label">Decision Maker Reach</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">10.6%</div>
-                <div class="stat-label">B2B Conversion Rate</div>
-            </div>
+            <h1>B2B Meta <span>Playbook</span></h1>
+            <p>A comprehensive paid social strategy to capture high-value corporate catering clients through Meta's advertising ecosystem.</p>
         </div>
     </section>
 
+    <!-- The Opportunity -->
     <section class="section">
         <div class="section-header">
-            <div class="section-label">Creative Preview</div>
-            <div class="section-title">Your Facebook Ads</div>
+            <div class="section-label">The Opportunity</div>
+            <div class="section-title">Why Meta Wins for B2B Catering</div>
         </div>
-        <div class="ads-grid">
-            <div class="ad-wrapper">
-                <div class="ad-stage">Awareness</div>
-                <div class="ad-mockup">
-                    <div class="ad-header">
-                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
-                        <div class="ad-meta">
-                            <div class="ad-name">Eatfirst</div>
-                            <div class="ad-sponsored">Sponsored</div>
-                        </div>
+        <div class="opportunity-grid">
+            <div class="opportunity-visual">
+                <div class="opp-stat">
+                    <div class="opp-value">3.05B</div>
+                    <div class="opp-label">Monthly Active Users</div>
+                </div>
+                <div class="opp-stat">
+                    <div class="opp-value">38M+</div>
+                    <div class="opp-label">Office Managers Reachable</div>
+                </div>
+                <div class="opp-stat">
+                    <div class="opp-value">10.6%</div>
+                    <div class="opp-label">B2B Lead Conversion Rate</div>
+                </div>
+            </div>
+            <div class="opportunity-content">
+                <h3>Reach Decision Makers Where They're Receptive</h3>
+                <p>Office managers, HR directors, and executive assistants scroll Facebook and Instagram during personal time—when they're relaxed and open to solutions that make their work life easier. This is the untapped B2B goldmine.</p>
+                <div class="comparison-bar">
+                    <div class="comparison-label">
+                        <span>Meta Ads CPL</span>
+                        <span style="color: var(--ef-teal); font-weight: 700;">$15-35</span>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&h=600&fit=crop" alt="Corporate catering" class="ad-image">
-                    <div class="ad-body">
-                        <div class="ad-text">Keep your team energized. Corporate catering made effortless.</div>
-                        <div class="ad-cta-bar">
-                            <div class="ad-cta-info">
-                                <div class="ad-cta-url">EATFIRST.COM</div>
+                    <div class="comparison-track">
+                        <div class="comparison-fill meta"></div>
+                    </div>
+                </div>
+                <div class="comparison-bar">
+                    <div class="comparison-label">
+                        <span>LinkedIn Ads CPL</span>
+                        <span style="color: var(--ef-coral); font-weight: 700;">$75-200</span>
+                    </div>
+                    <div class="comparison-track">
+                        <div class="comparison-fill linkedin"></div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 15px;"><strong>Result:</strong> 4-6x more leads for the same budget compared to LinkedIn.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audiences -->
+    <section class="section section-dark">
+        <div class="section-header">
+            <div class="section-label">Precision Targeting</div>
+            <div class="section-title">Who We'll Reach</div>
+        </div>
+        <div class="audience-grid">
+            <div class="audience-card">
+                <div class="audience-icon">👩‍💼</div>
+                <h4>Office Managers</h4>
+                <p>Primary decision makers for team lunches, meetings, and daily catering needs</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">🎯</div>
+                <h4>Executive Assistants</h4>
+                <p>Handle catering for C-suite meetings, board events, and VIP gatherings</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">👥</div>
+                <h4>HR Directors</h4>
+                <p>Coordinate company-wide events, team celebrations, and culture initiatives</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">📋</div>
+                <h4>Event Coordinators</h4>
+                <p>Plan conferences, workshops, and large-scale corporate functions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Creative -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Creative Strategy</div>
+                <div class="section-title">Ad Creative by Funnel Stage</div>
+            </div>
+            <div class="ad-showcase">
+                <div class="ad-column">
+                    <span class="ad-phase awareness">Awareness</span>
+                    <div class="ad-mockup">
+                        <div class="ad-top">
+                            <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
+                            <div class="ad-info">
+                                <div class="ad-name">Eatfirst</div>
+                                <div class="ad-sponsor">Sponsored</div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&h=600&fit=crop" alt="Corporate catering" class="ad-image">
+                        <div class="ad-copy">Still ordering sandwiches for your team? There's a better way. 🍽️</div>
+                        <div class="ad-cta">
+                            <div class="ad-cta-left">
+                                <div class="ad-cta-url">eatfirst.com</div>
                                 <div class="ad-cta-headline">Corporate Catering</div>
                             </div>
                             <button class="ad-cta-btn">Learn More</button>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="ad-wrapper">
-                <div class="ad-stage">Consideration</div>
-                <div class="ad-mockup">
-                    <div class="ad-header">
-                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
-                        <div class="ad-meta">
-                            <div class="ad-name">Eatfirst</div>
-                            <div class="ad-sponsored">Sponsored</div>
-                        </div>
+                    <div class="ad-desc">
+                        <h5>Objective: Brand Awareness</h5>
+                        <p>Video content showcasing food quality and ease of use. Targeting broad lookalikes (8-10%) to maximize reach efficiently.</p>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop" alt="Food spread" class="ad-image">
-                    <div class="ad-body">
-                        <div class="ad-text">500+ menu options from Sydney's best caterers. Browse now.</div>
-                        <div class="ad-cta-bar">
-                            <div class="ad-cta-info">
-                                <div class="ad-cta-url">EATFIRST.COM</div>
-                                <div class="ad-cta-headline">Explore Menus</div>
+                </div>
+
+                <div class="ad-column">
+                    <span class="ad-phase consideration">Consideration</span>
+                    <div class="ad-mockup">
+                        <div class="ad-top">
+                            <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
+                            <div class="ad-info">
+                                <div class="ad-name">Eatfirst</div>
+                                <div class="ad-sponsor">Sponsored</div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop" alt="Food spread" class="ad-image">
+                        <div class="ad-copy">From boardroom breakfasts to team lunches. 500+ menu options, one platform.</div>
+                        <div class="ad-cta">
+                            <div class="ad-cta-left">
+                                <div class="ad-cta-url">eatfirst.com</div>
+                                <div class="ad-cta-headline">Browse Menus</div>
                             </div>
                             <button class="ad-cta-btn">See Menus</button>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="ad-wrapper">
-                <div class="ad-stage">Conversion</div>
-                <div class="ad-mockup">
-                    <div class="ad-header">
-                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
-                        <div class="ad-meta">
-                            <div class="ad-name">Eatfirst</div>
-                            <div class="ad-sponsored">Sponsored</div>
-                        </div>
+                    <div class="ad-desc">
+                        <h5>Objective: Traffic & Engagement</h5>
+                        <p>Carousel ads showcasing cuisine variety. Targeting warm audiences: video viewers, website visitors, and 2-5% lookalikes.</p>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&h=600&fit=crop" alt="Catering setup" class="ad-image">
-                    <div class="ad-body">
-                        <div class="ad-text">First order? 15% off. Quote in 24 hours. Trusted by 500+ companies.</div>
-                        <div class="ad-cta-bar">
-                            <div class="ad-cta-info">
-                                <div class="ad-cta-url">EATFIRST.COM</div>
-                                <div class="ad-cta-headline">Get Your Quote</div>
+                </div>
+
+                <div class="ad-column">
+                    <span class="ad-phase conversion">Conversion</span>
+                    <div class="ad-mockup">
+                        <div class="ad-top">
+                            <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
+                            <div class="ad-info">
+                                <div class="ad-name">Eatfirst</div>
+                                <div class="ad-sponsor">Sponsored</div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&h=600&fit=crop" alt="Catering setup" class="ad-image">
+                        <div class="ad-copy">🎁 First order? Get 15% off. Quote in 24hrs. Trusted by 500+ companies.</div>
+                        <div class="ad-cta">
+                            <div class="ad-cta-left">
+                                <div class="ad-cta-url">eatfirst.com</div>
+                                <div class="ad-cta-headline">Get Free Quote</div>
                             </div>
                             <button class="ad-cta-btn">Get Quote</button>
                         </div>
                     </div>
+                    <div class="ad-desc">
+                        <h5>Objective: Lead Generation</h5>
+                        <p>Direct-response ads with social proof. Targeting hot audiences: cart abandoners, high-intent page visitors, and 1% lookalikes.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-alt">
-        <div class="section-header">
-            <div class="section-label">High Performance Format</div>
-            <div class="section-title">Carousel Ads</div>
-        </div>
-        <div class="carousel-section">
-            <div class="carousel-mockup">
-                <div class="ad-header">
-                    <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
-                    <div class="ad-meta">
-                        <div class="ad-name">Eatfirst</div>
-                        <div class="ad-sponsored">Sponsored</div>
-                    </div>
-                </div>
-                <div class="carousel-text">Every cuisine. Every occasion. Every budget.</div>
-                <div class="carousel-scroll">
-                    <div class="carousel-card">
-                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=300&fit=crop" alt="Asian">
-                        <div class="carousel-card-label">Asian →</div>
-                    </div>
-                    <div class="carousel-card">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=300&fit=crop" alt="Italian">
-                        <div class="carousel-card-label">Italian →</div>
-                    </div>
-                    <div class="carousel-card">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=300&fit=crop" alt="Healthy">
-                        <div class="carousel-card-label">Healthy →</div>
-                    </div>
-                    <div class="carousel-card">
-                        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=300&h=300&fit=crop" alt="BBQ">
-                        <div class="carousel-card-label">BBQ →</div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-benefits">
-                <h3>30-50% Lower Cost Per Conversion</h3>
-                <ul>
-                    <li>Showcase multiple cuisine options</li>
-                    <li>Tell a story across cards</li>
-                    <li>Drive menu exploration</li>
-                    <li>Lowest CPM of all formats</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
+    <!-- Funnel Strategy -->
     <section class="section">
         <div class="section-header">
-            <div class="section-label">Campaign Structure</div>
+            <div class="section-label">Campaign Architecture</div>
             <div class="section-title">Full-Funnel Strategy</div>
         </div>
-        <div class="funnel-section">
-            <div class="funnel-visual">
-                <div class="funnel-bar top">AWARENESS</div>
-                <div class="funnel-bar mid">CONSIDERATION</div>
-                <div class="funnel-bar bot">CONVERSION</div>
+        <div class="funnel-wrapper">
+            <div class="funnel-graphic">
+                <div class="funnel-shape">
+                    <div class="funnel-level l1">
+                        AWARENESS
+                        <div class="funnel-budget">20-30% of budget</div>
+                    </div>
+                    <div class="funnel-level l2">
+                        CONSIDERATION
+                        <div class="funnel-budget">30-40% of budget</div>
+                    </div>
+                    <div class="funnel-level l3">
+                        CONVERSION
+                        <div class="funnel-budget">30-50% of budget</div>
+                    </div>
+                </div>
             </div>
-            <div class="funnel-stages">
+            <div class="funnel-details">
                 <div class="funnel-card">
-                    <div class="funnel-icon blue">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
-                    </div>
-                    <div class="funnel-content">
-                        <h3>Awareness (20-30% Budget)</h3>
-                        <p>Build brand recognition with office decision-makers through video content</p>
-                        <div class="funnel-tags">
-                            <span class="funnel-tag">Video Ads</span>
-                            <span class="funnel-tag">Broad Targeting</span>
-                            <span class="funnel-tag">8-10% Lookalikes</span>
+                    <div class="funnel-card-header">
+                        <div class="funnel-card-icon blue">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
                         </div>
+                        <div class="funnel-card-title">
+                            <h4>Top of Funnel: Awareness</h4>
+                            <span>Build brand recognition at scale</span>
+                        </div>
+                    </div>
+                    <p>Introduce Eatfirst to cold audiences through scroll-stopping video content. Focus on emotional appeal—happy teams, delicious food, effortless ordering.</p>
+                    <div class="funnel-tactics">
+                        <span class="tactic-tag">15-30 sec Video Ads</span>
+                        <span class="tactic-tag">8-10% Lookalikes</span>
+                        <span class="tactic-tag">Interest Targeting</span>
+                        <span class="tactic-tag">Reach Optimization</span>
                     </div>
                 </div>
+
                 <div class="funnel-card">
-                    <div class="funnel-icon coral">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    </div>
-                    <div class="funnel-content">
-                        <h3>Consideration (30-40% Budget)</h3>
-                        <p>Showcase menu options, pricing, and ease of ordering to engaged users</p>
-                        <div class="funnel-tags">
-                            <span class="funnel-tag">Carousel Ads</span>
-                            <span class="funnel-tag">Menu Showcases</span>
-                            <span class="funnel-tag">2-5% Lookalikes</span>
+                    <div class="funnel-card-header">
+                        <div class="funnel-card-icon coral">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                         </div>
+                        <div class="funnel-card-title">
+                            <h4>Middle of Funnel: Consideration</h4>
+                            <span>Showcase value and menu variety</span>
+                        </div>
+                    </div>
+                    <p>Re-engage video viewers and website visitors with carousel ads showcasing menu diversity, pricing transparency, and customer testimonials.</p>
+                    <div class="funnel-tactics">
+                        <span class="tactic-tag">Carousel Ads</span>
+                        <span class="tactic-tag">2-5% Lookalikes</span>
+                        <span class="tactic-tag">Website Retargeting</span>
+                        <span class="tactic-tag">Traffic Optimization</span>
                     </div>
                 </div>
+
                 <div class="funnel-card">
-                    <div class="funnel-icon teal">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-                    </div>
-                    <div class="funnel-content">
-                        <h3>Conversion (30-50% Budget)</h3>
-                        <p>Drive quote requests with testimonials and frictionless lead forms</p>
-                        <div class="funnel-tags">
-                            <span class="funnel-tag">Lead Forms</span>
-                            <span class="funnel-tag">Testimonials</span>
-                            <span class="funnel-tag">Retargeting</span>
+                    <div class="funnel-card-header">
+                        <div class="funnel-card-icon teal">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
                         </div>
+                        <div class="funnel-card-title">
+                            <h4>Bottom of Funnel: Conversion</h4>
+                            <span>Drive quote requests and orders</span>
+                        </div>
+                    </div>
+                    <p>Convert high-intent audiences with lead form ads, limited-time offers, and social proof. Aggressive retargeting on cart abandoners and pricing page visitors.</p>
+                    <div class="funnel-tactics">
+                        <span class="tactic-tag">Lead Form Ads</span>
+                        <span class="tactic-tag">1% Lookalikes</span>
+                        <span class="tactic-tag">Dynamic Retargeting</span>
+                        <span class="tactic-tag">Conversion Optimization</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Lead Forms -->
     <section class="section section-alt">
-        <div class="section-header">
-            <div class="section-label">Investment</div>
-            <div class="section-title">Choose Your Growth Path</div>
-        </div>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <div class="pricing-name">Starter</div>
-                <div class="pricing-price">$3,000</div>
-                <div class="pricing-period">per month + ad spend</div>
-                <ul class="pricing-features">
-                    <li>Full-funnel campaign setup</li>
-                    <li>$100-150/day ad spend</li>
-                    <li>3 audiences tested</li>
-                    <li>5 creative variations</li>
-                    <li>Weekly reporting</li>
-                    <li>Monthly strategy call</li>
-                </ul>
-                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Starter" class="pricing-cta">Get Started</a>
-            </div>
-            <div class="pricing-card featured">
-                <div class="pricing-name">Growth</div>
-                <div class="pricing-price">$5,000</div>
-                <div class="pricing-period">per month + ad spend</div>
-                <ul class="pricing-features">
-                    <li>Everything in Starter</li>
-                    <li>$150-250/day ad spend</li>
-                    <li>6 audiences tested</li>
-                    <li>10 creative variations</li>
-                    <li>Advanced retargeting</li>
-                    <li>CRM integration</li>
-                    <li>Bi-weekly calls</li>
-                </ul>
-                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Growth" class="pricing-cta">Get Started</a>
-            </div>
-            <div class="pricing-card">
-                <div class="pricing-name">Scale</div>
-                <div class="pricing-price">$8,000</div>
-                <div class="pricing-period">per month + ad spend</div>
-                <ul class="pricing-features">
-                    <li>Everything in Growth</li>
-                    <li>$300+/day ad spend</li>
-                    <li>Unlimited audiences</li>
-                    <li>15+ creatives</li>
-                    <li>Seasonal campaigns</li>
-                    <li>Dedicated manager</li>
-                    <li>Weekly calls</li>
-                </ul>
-                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Scale" class="pricing-cta">Get Started</a>
+        <div class="section-inner">
+            <div class="leadform-section">
+                <div class="leadform-mockup">
+                    <div class="leadform-header">
+                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst">
+                        <h4>Get Your Free Quote</h4>
+                        <p>Corporate catering made easy</p>
+                    </div>
+                    <div class="leadform-body">
+                        <div class="leadform-field">
+                            <label>Work Email</label>
+                            <input type="email" placeholder="you@company.com">
+                        </div>
+                        <div class="leadform-field">
+                            <label>Company Name</label>
+                            <input type="text" placeholder="Acme Corp">
+                        </div>
+                        <div class="leadform-field">
+                            <label>Team Size</label>
+                            <select>
+                                <option>10-50 people</option>
+                                <option>50-200 people</option>
+                                <option>200+ people</option>
+                            </select>
+                        </div>
+                        <div class="leadform-field">
+                            <label>Catering Frequency</label>
+                            <select>
+                                <option>Weekly</option>
+                                <option>Monthly</option>
+                                <option>One-time event</option>
+                            </select>
+                        </div>
+                        <button class="leadform-submit">Get My Quote</button>
+                    </div>
+                </div>
+                <div class="leadform-content">
+                    <h3>Instant Lead Forms</h3>
+                    <p>Meta's native lead forms keep users on-platform, reducing friction and increasing conversion rates by up to 47% compared to landing pages.</p>
+                    <ul class="leadform-benefits">
+                        <li>
+                            <div class="benefit-icon">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h5>Pre-Filled Fields</h5>
+                                <p>Auto-fills name, email, and phone from Facebook profile</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benefit-icon">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h5>Mobile Optimized</h5>
+                                <p>Seamless experience on all devices</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benefit-icon">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h5>CRM Integration</h5>
+                                <p>Leads sync directly to your sales pipeline</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
-        <h2>Ready to grow?</h2>
-        <p>Let's fill your corporate catering pipeline with high-value clients.</p>
-        <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20B2B%20Meta%20Playbook" class="cta-btn primary">Get in Touch</a>
+    <!-- Retargeting -->
+    <section class="section section-dark">
+        <div class="section-header">
+            <div class="section-label">Never Lose a Lead</div>
+            <div class="section-title">Multi-Touch Retargeting</div>
+        </div>
+        <div class="retargeting-flow">
+            <div class="retarget-step">
+                <div class="icon">👀</div>
+                <h5>Views Video</h5>
+                <p>Watches 50%+ of awareness ad</p>
+            </div>
+            <div class="retarget-arrow">→</div>
+            <div class="retarget-step">
+                <div class="icon">🖱️</div>
+                <h5>Visits Site</h5>
+                <p>Browses menus or pricing</p>
+            </div>
+            <div class="retarget-arrow">→</div>
+            <div class="retarget-step">
+                <div class="icon">📝</div>
+                <h5>Starts Form</h5>
+                <p>Opens but doesn't complete</p>
+            </div>
+            <div class="retarget-arrow">→</div>
+            <div class="retarget-step">
+                <div class="icon">🎯</div>
+                <h5>Converts</h5>
+                <p>Becomes a qualified lead</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expected Results -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-label">Projected Outcomes</div>
+            <div class="section-title">What to Expect</div>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-value">$15-35</div>
+                <div class="result-label">Cost Per Lead</div>
+            </div>
+            <div class="result-card">
+                <div class="result-value">8-12%</div>
+                <div class="result-label">Lead to Quote Rate</div>
+            </div>
+            <div class="result-card">
+                <div class="result-value">2-4x</div>
+                <div class="result-label">ROAS Target</div>
+            </div>
+            <div class="result-card">
+                <div class="result-value">90 Days</div>
+                <div class="result-label">Optimization Window</div>
+            </div>
+        </div>
     </section>
 
     <footer class="footer">
-        <a href="https://jordanjamesmedia.com" target="_blank" class="made-by">
-            <span>Strategy by</span>
+        <a href="https://jordanjamesmedia.com" class="made-by">
+            Strategy by
             <img src="https://jordanjamesmedia.com/logo.png" alt="Jordan James Media">
         </a>
     </footer>
