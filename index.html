@@ -3,192 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2B Meta Strategy | Eatfirst</title>
+    <title>B2B Meta Strategy | Eatfirst x Jordan James Media</title>
     <link rel="icon" href="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ef-dark: #1a1a2e;
             --ef-purple: #7F7FA0;
             --ef-light: #EDEDF2;
-            --ef-accent: #FF6B6B;
-            --ef-green: #4ECDC4;
-            --white: #ffffff;
-            --gray-100: #f7f7f8;
-            --gray-200: #e5e5e7;
-            --gray-600: #6b6b6b;
+            --ef-dark: #2D2D3A;
+            --ef-coral: #FF6B6B;
+            --ef-teal: #4ECDC4;
+            --white: #FFFFFF;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #EEEEEE;
+            --gray-400: #BDBDBD;
+            --gray-600: #757575;
+            --gray-800: #424242;
             --meta-blue: #1877F2;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--ef-dark);
-            color: var(--white);
-            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
-
-        /* Slide Layout */
-        .slide {
-            min-height: 100vh;
-            padding: 60px 80px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .slide-dark { background: var(--ef-dark); }
-        .slide-light { background: var(--white); color: var(--ef-dark); }
-        .slide-gradient { background: linear-gradient(135deg, var(--ef-dark) 0%, #16213e 100%); }
 
         /* Header */
         .header {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 20px 40px;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 16px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(26, 26, 46, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
         }
 
         .header-logos {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 20px;
         }
 
-        .header-logo {
-            height: 28px;
-            width: auto;
-        }
+        .header-logo { height: 32px; }
+        .header-divider { color: var(--gray-400); font-weight: 300; }
 
-        .header-divider {
-            width: 1px;
-            height: 20px;
-            background: rgba(255,255,255,0.3);
-        }
-
-        .header-nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        .header-nav a {
-            color: var(--ef-light);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-
-        .header-nav a:hover { opacity: 1; }
-
-        /* Title Slide */
-        .title-slide {
-            justify-content: center;
-            align-items: center;
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--ef-light) 0%, var(--white) 100%);
+            padding: 80px 48px;
             text-align: center;
-            padding-top: 100px;
         }
 
-        .title-slide .logo-large {
-            height: 60px;
-            margin-bottom: 40px;
-        }
-
-        .title-slide h1 {
-            font-size: 64px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            line-height: 1.1;
-        }
-
-        .title-slide h1 span {
-            color: var(--ef-accent);
-        }
-
-        .title-slide .subtitle {
-            font-size: 24px;
-            color: var(--ef-purple);
-            margin-bottom: 60px;
-        }
-
-        .title-slide .meta-badge {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(24, 119, 242, 0.2);
-            border: 1px solid rgba(24, 119, 242, 0.4);
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
+            gap: 8px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--meta-blue);
+            margin-bottom: 24px;
         }
 
-        .title-slide .meta-badge svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--meta-blue);
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--ef-dark);
+            margin-bottom: 16px;
+            line-height: 1.2;
         }
 
-        /* Section Headers */
+        .hero p {
+            font-size: 20px;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-alt { background: var(--gray-50); }
+
         .section-header {
-            margin-bottom: 60px;
+            text-align: center;
+            margin-bottom: 48px;
         }
 
         .section-label {
             font-size: 12px;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--ef-accent);
-            margin-bottom: 16px;
+            letter-spacing: 1.5px;
+            color: var(--ef-purple);
+            margin-bottom: 12px;
         }
 
         .section-title {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.1;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ef-dark);
         }
 
-        /* Stats Row */
-        .stats-row {
+        /* Stats */
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
-            margin-bottom: 60px;
+            margin-bottom: 48px;
         }
 
         .stat-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 32px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
             text-align: center;
         }
 
         .stat-value {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--ef-green);
-            margin-bottom: 8px;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--ef-teal);
         }
 
         .stat-label {
-            font-size: 14px;
-            color: var(--ef-purple);
+            font-size: 13px;
+            color: var(--gray-600);
+            margin-top: 4px;
         }
 
         /* Ad Mockups */
@@ -196,41 +156,46 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
-            flex: 1;
+        }
+
+        .ad-wrapper { text-align: center; }
+
+        .ad-stage {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--ef-purple);
+            margin-bottom: 16px;
         }
 
         .ad-mockup {
             background: var(--white);
-            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
             overflow: hidden;
-            color: var(--ef-dark);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
         }
 
         .ad-header {
-            padding: 12px 16px;
+            padding: 12px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             border-bottom: 1px solid var(--gray-200);
         }
 
         .ad-avatar {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            object-fit: cover;
+            background: var(--ef-dark);
+            padding: 6px;
         }
 
-        .ad-name {
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .ad-sponsored {
-            font-size: 12px;
-            color: var(--gray-600);
-        }
+        .ad-meta { text-align: left; }
+        .ad-name { font-size: 13px; font-weight: 600; }
+        .ad-sponsored { font-size: 11px; color: var(--gray-600); }
 
         .ad-image {
             width: 100%;
@@ -238,582 +203,517 @@
             object-fit: cover;
         }
 
-        .ad-content {
-            padding: 16px;
-        }
+        .ad-body { padding: 12px; text-align: left; }
+        .ad-text { font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
 
-        .ad-text {
-            font-size: 14px;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .ad-cta {
+        .ad-cta-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 16px;
             background: var(--gray-100);
-            border-radius: 8px;
+            padding: 10px 12px;
+            border-radius: 6px;
         }
 
-        .ad-cta-text {
-            font-size: 12px;
-            color: var(--gray-600);
-        }
-
-        .ad-cta-text strong {
-            display: block;
-            color: var(--ef-dark);
-            font-size: 14px;
-        }
+        .ad-cta-info { text-align: left; }
+        .ad-cta-url { font-size: 11px; color: var(--gray-600); }
+        .ad-cta-headline { font-size: 13px; font-weight: 600; }
 
         .ad-cta-btn {
             background: var(--meta-blue);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
+            color: var(--white);
             border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
         }
 
-        .ad-label {
-            text-align: center;
-            padding: 16px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--ef-purple);
-            background: rgba(255,255,255,0.05);
-            border-radius: 0 0 12px 12px;
-            margin-top: -12px;
-        }
-
-        /* Funnel Visual */
-        .funnel-container {
-            display: flex;
-            gap: 40px;
-            flex: 1;
-            align-items: stretch;
+        /* Funnel */
+        .funnel-section {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+            align-items: start;
         }
 
         .funnel-visual {
-            flex: 0 0 300px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             gap: 8px;
         }
 
         .funnel-bar {
-            height: 80px;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .funnel-bar.top { background: var(--meta-blue); }
+        .funnel-bar.mid { background: var(--ef-coral); width: 85%; margin: 0 auto; }
+        .funnel-bar.bot { background: var(--ef-teal); width: 70%; margin: 0 auto; }
+
+        .funnel-stages { display: flex; flex-direction: column; gap: 24px; }
+
+        .funnel-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 18px;
-            transition: transform 0.3s;
-        }
-
-        .funnel-bar:hover {
-            transform: scale(1.02);
-        }
-
-        .funnel-bar.awareness {
-            width: 100%;
-            background: linear-gradient(135deg, #1877F2 0%, #00C6FF 100%);
-        }
-
-        .funnel-bar.consideration {
-            width: 75%;
-            margin: 0 auto;
-            background: linear-gradient(135deg, var(--ef-accent) 0%, #FF8E53 100%);
-        }
-
-        .funnel-bar.conversion {
-            width: 50%;
-            margin: 0 auto;
-            background: linear-gradient(135deg, var(--ef-green) 0%, #44D9A8 100%);
-        }
-
-        .funnel-details {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .funnel-stage-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
             padding: 24px;
             display: flex;
-            gap: 20px;
+            gap: 16px;
         }
 
-        .funnel-stage-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+        .funnel-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
 
-        .funnel-stage-icon.blue { background: rgba(24, 119, 242, 0.2); color: #1877F2; }
-        .funnel-stage-icon.red { background: rgba(255, 107, 107, 0.2); color: var(--ef-accent); }
-        .funnel-stage-icon.green { background: rgba(78, 205, 196, 0.2); color: var(--ef-green); }
+        .funnel-icon.blue { background: rgba(24,119,242,0.1); color: var(--meta-blue); }
+        .funnel-icon.coral { background: rgba(255,107,107,0.1); color: var(--ef-coral); }
+        .funnel-icon.teal { background: rgba(78,205,196,0.1); color: var(--ef-teal); }
 
-        .funnel-stage-content h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+        .funnel-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+        .funnel-content p { font-size: 14px; color: var(--gray-600); margin-bottom: 12px; }
 
-        .funnel-stage-content p {
-            font-size: 14px;
-            color: var(--ef-purple);
-            margin-bottom: 12px;
-        }
-
-        .funnel-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
+        .funnel-tags { display: flex; gap: 6px; flex-wrap: wrap; }
 
         .funnel-tag {
             font-size: 11px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.1);
+            font-weight: 500;
+            padding: 4px 10px;
+            background: var(--gray-100);
+            border-radius: 100px;
+            color: var(--gray-600);
         }
 
-        /* Carousel Ad */
+        /* Carousel Preview */
+        .carousel-section {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
         .carousel-mockup {
             background: var(--white);
-            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
             overflow: hidden;
-            color: var(--ef-dark);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 500px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
         }
 
-        .carousel-images {
+        .carousel-text { padding: 12px; font-size: 13px; }
+
+        .carousel-scroll {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
+            gap: 0;
         }
 
-        .carousel-images::-webkit-scrollbar { display: none; }
+        .carousel-scroll::-webkit-scrollbar { display: none; }
 
         .carousel-card {
-            flex: 0 0 200px;
+            flex: 0 0 140px;
             scroll-snap-align: start;
+            border-right: 1px solid var(--gray-200);
         }
 
         .carousel-card img {
             width: 100%;
-            height: 200px;
+            height: 140px;
             object-fit: cover;
         }
 
-        .carousel-card-text {
-            padding: 12px;
-            font-size: 13px;
+        .carousel-card-label {
+            padding: 10px;
+            font-size: 12px;
             font-weight: 600;
             background: var(--gray-100);
         }
 
-        /* Investment Cards */
-        .investment-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            flex: 1;
-        }
+        .carousel-benefits h3 { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
 
-        .investment-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .investment-card.featured {
-            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
-            border-color: var(--ef-green);
-        }
-
-        .investment-card.featured::before {
-            content: 'RECOMMENDED';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--ef-green);
-            color: var(--ef-dark);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 6px 16px;
-            border-radius: 20px;
-        }
-
-        .investment-name {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .investment-price {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-
-        .investment-period {
-            font-size: 14px;
-            color: var(--ef-purple);
-            margin-bottom: 32px;
-        }
-
-        .investment-features {
+        .carousel-benefits ul {
             list-style: none;
-            flex: 1;
         }
 
-        .investment-features li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            font-size: 14px;
+        .carousel-benefits li {
+            padding: 8px 0;
+            font-size: 15px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .investment-features li::before {
+        .carousel-benefits li::before {
             content: '✓';
-            color: var(--ef-green);
+            color: var(--ef-teal);
             font-weight: 700;
         }
 
-        .investment-cta {
-            margin-top: 32px;
-            padding: 16px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
-            transition: transform 0.2s;
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
-        .investment-cta:hover {
-            transform: scale(1.02);
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
         }
 
-        .investment-card.featured .investment-cta {
-            background: var(--ef-green);
-            color: var(--ef-dark);
+        .pricing-card.featured {
+            border-color: var(--ef-teal);
+            box-shadow: 0 8px 32px rgba(78,205,196,0.15);
         }
 
-        .investment-card:not(.featured) .investment-cta {
-            background: rgba(255,255,255,0.1);
+        .pricing-card.featured::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--ef-teal);
             color: var(--white);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
         }
 
-        /* Footer CTA */
-        .cta-slide {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+        .pricing-name { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .pricing-price { font-size: 40px; font-weight: 700; color: var(--ef-dark); }
+        .pricing-period { font-size: 13px; color: var(--gray-600); margin-bottom: 24px; }
 
-        .cta-slide h2 {
-            font-size: 56px;
-            font-weight: 800;
+        .pricing-features {
+            list-style: none;
             margin-bottom: 24px;
         }
 
-        .cta-slide p {
-            font-size: 20px;
-            color: var(--ef-purple);
-            margin-bottom: 48px;
-            max-width: 600px;
-        }
-
-        .cta-buttons {
+        .pricing-features li {
+            padding: 10px 0;
+            font-size: 14px;
+            border-bottom: 1px solid var(--gray-200);
             display: flex;
-            gap: 20px;
+            align-items: center;
+            gap: 8px;
         }
 
-        .cta-btn {
-            padding: 20px 40px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 700;
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--ef-teal);
+            font-weight: 600;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
             text-decoration: none;
             transition: transform 0.2s;
         }
 
-        .cta-btn:hover {
-            transform: translateY(-2px);
-        }
+        .pricing-cta:hover { transform: translateY(-2px); }
 
-        .cta-btn.primary {
-            background: var(--ef-accent);
+        .pricing-card.featured .pricing-cta {
+            background: var(--ef-teal);
             color: var(--white);
         }
 
-        .cta-btn.secondary {
-            background: rgba(255,255,255,0.1);
+        .pricing-card:not(.featured) .pricing-cta {
+            background: var(--gray-100);
+            color: var(--ef-dark);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: var(--ef-dark);
             color: var(--white);
-            border: 1px solid rgba(255,255,255,0.2);
+            padding: 80px 48px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; }
+
+        .cta-btn {
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:hover { transform: translateY(-2px); }
+        .cta-btn.primary { background: var(--ef-coral); color: var(--white); }
+        .cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); }
+
+        .cta-logos {
+            margin-top: 48px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-100);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .made-by {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--gray-600);
+            font-size: 13px;
+        }
+
+        .made-by img {
+            height: 20px;
+        }
+
+        .made-by:hover {
+            color: var(--ef-dark);
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .slide { padding: 40px; }
-            .ads-grid { grid-template-columns: 1fr; }
-            .stats-row { grid-template-columns: repeat(2, 1fr); }
-            .investment-grid { grid-template-columns: 1fr; }
-            .funnel-container { flex-direction: column; }
-            .funnel-visual { flex: none; }
+        @media (max-width: 900px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .ads-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+            .funnel-section { grid-template-columns: 1fr; }
+            .carousel-section { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 36px; }
+            .section { padding: 60px 24px; }
+            .header { padding: 16px 24px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Fixed Header -->
     <header class="header">
         <div class="header-logos">
             <a href="https://eatfirst.com" target="_blank">
                 <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="header-logo">
             </a>
-            <div class="header-divider"></div>
-            <a href="https://jordanjamesmedia.com" target="_blank">
-                <img src="https://jordanjamesmedia.com/logo.png" alt="Jordan James Media" class="header-logo">
-            </a>
         </div>
-        <nav class="header-nav">
-            <a href="#strategy">Strategy</a>
-            <a href="#ads">Ad Previews</a>
-            <a href="#funnel">Funnel</a>
-            <a href="#investment">Investment</a>
-        </nav>
     </header>
 
-    <!-- Title Slide -->
-    <section class="slide slide-gradient title-slide">
-        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="logo-large">
-        <h1>B2B Meta <span>Playbook</span></h1>
-        <p class="subtitle">Capturing High-Value Corporate Catering Clients</p>
-        <div class="meta-badge">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            Facebook & Instagram Advertising Strategy
+    <section class="hero">
+        <div class="hero-badge">
+            <svg width="16" height="16" fill="#1877F2" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            Meta Advertising Strategy
         </div>
+        <h1>B2B Meta Playbook</h1>
+        <p>A full-funnel Facebook & Instagram strategy to capture high-value corporate catering clients.</p>
     </section>
 
-    <!-- Stats Slide -->
-    <section class="slide slide-dark" id="strategy">
+    <section class="section section-alt">
         <div class="section-header">
             <div class="section-label">The Opportunity</div>
-            <h2 class="section-title">Why Meta for B2B Catering?</h2>
+            <div class="section-title">Why Meta for B2B Catering?</div>
         </div>
-        <div class="stats-row">
+        <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-value">$15-35</div>
                 <div class="stat-label">Target Cost Per Lead</div>
             </div>
             <div class="stat-card">
                 <div class="stat-value">47%</div>
-                <div class="stat-label">Lower CPL vs Landing Pages</div>
+                <div class="stat-label">Lower CPL vs LinkedIn</div>
             </div>
             <div class="stat-card">
                 <div class="stat-value">38M+</div>
-                <div class="stat-label">Office Manager Reach</div>
+                <div class="stat-label">Decision Maker Reach</div>
             </div>
             <div class="stat-card">
                 <div class="stat-value">10.6%</div>
                 <div class="stat-label">B2B Conversion Rate</div>
             </div>
         </div>
-        <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 32px; border: 1px solid rgba(255,255,255,0.1);">
-            <p style="font-size: 18px; line-height: 1.8; color: var(--ef-light);">
-                Meta offers <strong style="color: var(--ef-green);">$5-27 CPL</strong> versus LinkedIn's <strong style="color: var(--ef-accent);">$50-200</strong>.
-                We'll reach office managers, HR directors, and event planners during personal browsing when they're receptive to "work-solving" content.
-            </p>
-        </div>
     </section>
 
-    <!-- Ad Previews Slide -->
-    <section class="slide slide-dark" id="ads">
+    <section class="section">
         <div class="section-header">
-            <div class="section-label">Creative Strategy</div>
-            <h2 class="section-title">Your Meta Ads</h2>
+            <div class="section-label">Creative Preview</div>
+            <div class="section-title">Your Facebook Ads</div>
         </div>
         <div class="ads-grid">
-            <!-- Ad 1: Awareness -->
-            <div>
+            <div class="ad-wrapper">
+                <div class="ad-stage">Awareness</div>
                 <div class="ad-mockup">
                     <div class="ad-header">
-                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar" style="background:#1a1a2e; padding:8px;">
-                        <div>
+                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
+                        <div class="ad-meta">
                             <div class="ad-name">Eatfirst</div>
                             <div class="ad-sponsored">Sponsored</div>
                         </div>
                     </div>
                     <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&h=600&fit=crop" alt="Corporate catering" class="ad-image">
-                    <div class="ad-content">
-                        <div class="ad-text">Keep your team energized and focused. Australia's #1 corporate catering platform makes office meals effortless.</div>
-                        <div class="ad-cta">
-                            <div class="ad-cta-text">
-                                EATFIRST.COM
-                                <strong>Corporate Catering Made Easy</strong>
+                    <div class="ad-body">
+                        <div class="ad-text">Keep your team energized. Corporate catering made effortless.</div>
+                        <div class="ad-cta-bar">
+                            <div class="ad-cta-info">
+                                <div class="ad-cta-url">EATFIRST.COM</div>
+                                <div class="ad-cta-headline">Corporate Catering</div>
                             </div>
                             <button class="ad-cta-btn">Learn More</button>
                         </div>
                     </div>
                 </div>
-                <div class="ad-label">Awareness Ad</div>
             </div>
 
-            <!-- Ad 2: Consideration -->
-            <div>
+            <div class="ad-wrapper">
+                <div class="ad-stage">Consideration</div>
                 <div class="ad-mockup">
                     <div class="ad-header">
-                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar" style="background:#1a1a2e; padding:8px;">
-                        <div>
+                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
+                        <div class="ad-meta">
                             <div class="ad-name">Eatfirst</div>
                             <div class="ad-sponsored">Sponsored</div>
                         </div>
                     </div>
                     <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop" alt="Food spread" class="ad-image">
-                    <div class="ad-content">
-                        <div class="ad-text">From team lunches to executive boardrooms. Browse 500+ menu options from Sydney's best caterers.</div>
-                        <div class="ad-cta">
-                            <div class="ad-cta-text">
-                                EATFIRST.COM
-                                <strong>Explore Our Menus</strong>
+                    <div class="ad-body">
+                        <div class="ad-text">500+ menu options from Sydney's best caterers. Browse now.</div>
+                        <div class="ad-cta-bar">
+                            <div class="ad-cta-info">
+                                <div class="ad-cta-url">EATFIRST.COM</div>
+                                <div class="ad-cta-headline">Explore Menus</div>
                             </div>
                             <button class="ad-cta-btn">See Menus</button>
                         </div>
                     </div>
                 </div>
-                <div class="ad-label">Consideration Ad</div>
             </div>
 
-            <!-- Ad 3: Conversion -->
-            <div>
+            <div class="ad-wrapper">
+                <div class="ad-stage">Conversion</div>
                 <div class="ad-mockup">
                     <div class="ad-header">
-                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar" style="background:#1a1a2e; padding:8px;">
-                        <div>
+                        <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
+                        <div class="ad-meta">
                             <div class="ad-name">Eatfirst</div>
                             <div class="ad-sponsored">Sponsored</div>
                         </div>
                     </div>
                     <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&h=600&fit=crop" alt="Catering setup" class="ad-image">
-                    <div class="ad-content">
-                        <div class="ad-text">🎉 First order? Get 15% off. Quote in 24 hours. Trusted by 500+ companies across Australia.</div>
-                        <div class="ad-cta">
-                            <div class="ad-cta-text">
-                                EATFIRST.COM
-                                <strong>Get Your Free Quote</strong>
+                    <div class="ad-body">
+                        <div class="ad-text">First order? 15% off. Quote in 24 hours. Trusted by 500+ companies.</div>
+                        <div class="ad-cta-bar">
+                            <div class="ad-cta-info">
+                                <div class="ad-cta-url">EATFIRST.COM</div>
+                                <div class="ad-cta-headline">Get Your Quote</div>
                             </div>
                             <button class="ad-cta-btn">Get Quote</button>
                         </div>
                     </div>
                 </div>
-                <div class="ad-label">Conversion Ad</div>
             </div>
         </div>
     </section>
 
-    <!-- Carousel Ad Preview -->
-    <section class="slide slide-dark">
+    <section class="section section-alt">
         <div class="section-header">
-            <div class="section-label">High-Performance Format</div>
-            <h2 class="section-title">Carousel Ads</h2>
+            <div class="section-label">High Performance Format</div>
+            <div class="section-title">Carousel Ads</div>
         </div>
-        <div style="display: flex; gap: 60px; align-items: center;">
+        <div class="carousel-section">
             <div class="carousel-mockup">
                 <div class="ad-header">
-                    <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar" style="background:#1a1a2e; padding:8px;">
-                    <div>
+                    <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" class="ad-avatar">
+                    <div class="ad-meta">
                         <div class="ad-name">Eatfirst</div>
                         <div class="ad-sponsored">Sponsored</div>
                     </div>
                 </div>
-                <div style="padding: 12px; font-size: 14px;">Every cuisine. Every occasion. Every budget.</div>
-                <div class="carousel-images">
+                <div class="carousel-text">Every cuisine. Every occasion. Every budget.</div>
+                <div class="carousel-scroll">
                     <div class="carousel-card">
-                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=400&fit=crop" alt="Asian cuisine">
-                        <div class="carousel-card-text">Asian Cuisine →</div>
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=300&fit=crop" alt="Asian">
+                        <div class="carousel-card-label">Asian →</div>
                     </div>
                     <div class="carousel-card">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop" alt="Italian">
-                        <div class="carousel-card-text">Italian →</div>
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=300&fit=crop" alt="Italian">
+                        <div class="carousel-card-label">Italian →</div>
                     </div>
                     <div class="carousel-card">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop" alt="Healthy">
-                        <div class="carousel-card-text">Healthy Options →</div>
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=300&fit=crop" alt="Healthy">
+                        <div class="carousel-card-label">Healthy →</div>
                     </div>
                     <div class="carousel-card">
-                        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=400&h=400&fit=crop" alt="BBQ">
-                        <div class="carousel-card-text">BBQ & Grill →</div>
+                        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=300&h=300&fit=crop" alt="BBQ">
+                        <div class="carousel-card-label">BBQ →</div>
                     </div>
                 </div>
             </div>
-            <div style="flex: 1;">
-                <h3 style="font-size: 28px; margin-bottom: 24px;">30-50% Lower Cost Per Conversion</h3>
-                <ul style="list-style: none; font-size: 18px; line-height: 2;">
-                    <li style="display: flex; align-items: center; gap: 12px;">
-                        <span style="color: var(--ef-green);">✓</span> Showcase multiple cuisine options
-                    </li>
-                    <li style="display: flex; align-items: center; gap: 12px;">
-                        <span style="color: var(--ef-green);">✓</span> Tell a story across cards
-                    </li>
-                    <li style="display: flex; align-items: center; gap: 12px;">
-                        <span style="color: var(--ef-green);">✓</span> Drive menu exploration
-                    </li>
-                    <li style="display: flex; align-items: center; gap: 12px;">
-                        <span style="color: var(--ef-green);">✓</span> Lowest CPM of all formats
-                    </li>
+            <div class="carousel-benefits">
+                <h3>30-50% Lower Cost Per Conversion</h3>
+                <ul>
+                    <li>Showcase multiple cuisine options</li>
+                    <li>Tell a story across cards</li>
+                    <li>Drive menu exploration</li>
+                    <li>Lowest CPM of all formats</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Funnel Slide -->
-    <section class="slide slide-dark" id="funnel">
+    <section class="section">
         <div class="section-header">
             <div class="section-label">Campaign Structure</div>
-            <h2 class="section-title">Full-Funnel Strategy</h2>
+            <div class="section-title">Full-Funnel Strategy</div>
         </div>
-        <div class="funnel-container">
+        <div class="funnel-section">
             <div class="funnel-visual">
-                <div class="funnel-bar awareness">AWARENESS</div>
-                <div class="funnel-bar consideration">CONSIDERATION</div>
-                <div class="funnel-bar conversion">CONVERSION</div>
+                <div class="funnel-bar top">AWARENESS</div>
+                <div class="funnel-bar mid">CONSIDERATION</div>
+                <div class="funnel-bar bot">CONVERSION</div>
             </div>
-            <div class="funnel-details">
-                <div class="funnel-stage-card">
-                    <div class="funnel-stage-icon blue">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            <div class="funnel-stages">
+                <div class="funnel-card">
+                    <div class="funnel-icon blue">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
                     </div>
-                    <div class="funnel-stage-content">
+                    <div class="funnel-content">
                         <h3>Awareness (20-30% Budget)</h3>
-                        <p>Build brand recognition with office decision-makers through educational video content</p>
+                        <p>Build brand recognition with office decision-makers through video content</p>
                         <div class="funnel-tags">
                             <span class="funnel-tag">Video Ads</span>
                             <span class="funnel-tag">Broad Targeting</span>
@@ -821,11 +721,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="funnel-stage-card">
-                    <div class="funnel-stage-icon red">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <div class="funnel-card">
+                    <div class="funnel-icon coral">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     </div>
-                    <div class="funnel-stage-content">
+                    <div class="funnel-content">
                         <h3>Consideration (30-40% Budget)</h3>
                         <p>Showcase menu options, pricing, and ease of ordering to engaged users</p>
                         <div class="funnel-tags">
@@ -835,11 +735,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="funnel-stage-card">
-                    <div class="funnel-stage-icon green">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                <div class="funnel-card">
+                    <div class="funnel-icon teal">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
                     </div>
-                    <div class="funnel-stage-content">
+                    <div class="funnel-content">
                         <h3>Conversion (30-50% Budget)</h3>
                         <p>Drive quote requests with testimonials and frictionless lead forms</p>
                         <div class="funnel-tags">
@@ -853,18 +753,17 @@
         </div>
     </section>
 
-    <!-- Investment Slide -->
-    <section class="slide slide-dark" id="investment">
+    <section class="section section-alt">
         <div class="section-header">
             <div class="section-label">Investment</div>
-            <h2 class="section-title">Choose Your Growth Path</h2>
+            <div class="section-title">Choose Your Growth Path</div>
         </div>
-        <div class="investment-grid">
-            <div class="investment-card">
-                <div class="investment-name">Starter</div>
-                <div class="investment-price">$3,000</div>
-                <div class="investment-period">per month + ad spend</div>
-                <ul class="investment-features">
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-name">Starter</div>
+                <div class="pricing-price">$3,000</div>
+                <div class="pricing-period">per month + ad spend</div>
+                <ul class="pricing-features">
                     <li>Full-funnel campaign setup</li>
                     <li>$100-150/day ad spend</li>
                     <li>3 audiences tested</li>
@@ -872,13 +771,13 @@
                     <li>Weekly reporting</li>
                     <li>Monthly strategy call</li>
                 </ul>
-                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Starter" class="investment-cta">Get Started</a>
+                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Starter" class="pricing-cta">Get Started</a>
             </div>
-            <div class="investment-card featured">
-                <div class="investment-name">Growth</div>
-                <div class="investment-price">$5,000</div>
-                <div class="investment-period">per month + ad spend</div>
-                <ul class="investment-features">
+            <div class="pricing-card featured">
+                <div class="pricing-name">Growth</div>
+                <div class="pricing-price">$5,000</div>
+                <div class="pricing-period">per month + ad spend</div>
+                <ul class="pricing-features">
                     <li>Everything in Starter</li>
                     <li>$150-250/day ad spend</li>
                     <li>6 audiences tested</li>
@@ -887,13 +786,13 @@
                     <li>CRM integration</li>
                     <li>Bi-weekly calls</li>
                 </ul>
-                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Growth" class="investment-cta">Get Started</a>
+                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Growth" class="pricing-cta">Get Started</a>
             </div>
-            <div class="investment-card">
-                <div class="investment-name">Scale</div>
-                <div class="investment-price">$8,000</div>
-                <div class="investment-period">per month + ad spend</div>
-                <ul class="investment-features">
+            <div class="pricing-card">
+                <div class="pricing-name">Scale</div>
+                <div class="pricing-price">$8,000</div>
+                <div class="pricing-period">per month + ad spend</div>
+                <ul class="pricing-features">
                     <li>Everything in Growth</li>
                     <li>$300+/day ad spend</li>
                     <li>Unlimited audiences</li>
@@ -902,29 +801,23 @@
                     <li>Dedicated manager</li>
                     <li>Weekly calls</li>
                 </ul>
-                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Scale" class="investment-cta">Get Started</a>
+                <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20Scale" class="pricing-cta">Get Started</a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Slide -->
-    <section class="slide slide-gradient cta-slide">
+    <section class="cta-section">
         <h2>Ready to grow?</h2>
         <p>Let's fill your corporate catering pipeline with high-value clients.</p>
-        <div class="cta-buttons">
-            <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20B2B%20Meta%20Playbook" class="cta-btn primary">Schedule a Call</a>
-            <a href="https://jordanjamesmedia.com" target="_blank" class="cta-btn secondary">Visit JJM</a>
-        </div>
-        <div style="margin-top: 60px; display: flex; gap: 32px; align-items: center; justify-content: center;">
-            <a href="https://eatfirst.com" target="_blank">
-                <img src="https://cdn.prod.website-files.com/5e45dcd19582afaa22b5a343/5f71415901dd5e1a66e5e6f1_eatfirst-logo-2x-2.png" alt="Eatfirst" style="height: 32px; opacity: 0.7;">
-            </a>
-            <span style="color: var(--ef-purple);">×</span>
-            <a href="https://jordanjamesmedia.com" target="_blank">
-                <img src="https://jordanjamesmedia.com/logo.png" alt="JJM" style="height: 36px; opacity: 0.7;">
-            </a>
-        </div>
+        <a href="mailto:jordan@jordanjamesmedia.com?subject=Eatfirst%20B2B%20Meta%20Playbook" class="cta-btn primary">Get in Touch</a>
     </section>
+
+    <footer class="footer">
+        <a href="https://jordanjamesmedia.com" target="_blank" class="made-by">
+            <span>Strategy by</span>
+            <img src="https://jordanjamesmedia.com/logo.png" alt="Jordan James Media">
+        </a>
+    </footer>
 
 </body>
 </html>
